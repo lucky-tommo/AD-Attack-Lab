@@ -7,7 +7,7 @@
         },
         {
             "name": "IT Admins"
-        }.
+        },
         {
             "name": "Helpdesk"
         },
