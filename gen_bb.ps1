@@ -25,12 +25,6 @@ function RemoveADGroup(){
     Remove-ADGroup -Identity $name -Confirm:$False
 }
 
-function RemoveAdminGroup(){
-    param( [Parameter(Mandatory=$true)] $domainadmingroupsObject )
-
-    $name = $domainadmingroupsObject.name
-    Remove-ADGroupMember -Identity "Domain Admins" -Members $name
-}
 
 function CreateADUser(){
     param( [Parameter(Mandatory=$true)] $userObject )
@@ -122,7 +116,8 @@ if ( -not $Undo) {
         CreateADUser $user
     }
     setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
-}else{
+}
+else{
     StrengthenPasswordPolicy
 
     foreach ( $user in $json.users ){
