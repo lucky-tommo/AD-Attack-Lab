@@ -47,7 +47,7 @@ function CreateADUser(){
 
     #Generate a "first name, last name" structure for username - user adm.firstname for admin accounts in JSON file. 
     $firstname, $lastname = $name.Split(" ")
-    $username = ($firstname + $lastname).ToLower()
+    $username = ($firstname + "." + $lastname).ToLower()
     $samAccountName = $username
     $principalname = $username
     
@@ -82,7 +82,7 @@ function RemoveADUser(){
 
     $name = $userObject.name
     $firstname, $lastname = $name.Split(" ")
-    $username = ($firstname[0] + $lastname).ToLower()
+    $username = ($firstname + "." + $lastname).ToLower()
     $samAccountName = $username
     Remove-ADUser -Identity $samAccountName -Confirm:$False
 }
