@@ -39,7 +39,6 @@
                 "Employees"
             ]
         },
-        }
         {
             "name": "Hank Schrader",
             "password":"youretoostupidtosee",
@@ -47,7 +46,6 @@
                 "Employees"
             ]
         },
-        }
         {
             "name": "Saul Goodman",
             "password":"s'allgoodman",
@@ -81,7 +79,7 @@
     ],
     "domainadmingroups" : [
         {
-            "name": "IT Admins"
+            "name": "IT Admin"
         }
     ]
 
