@@ -16,7 +16,7 @@
             "groups": [
                 "Employees",
                 "Accounting"
-            ]
+            ] 
         },
         {           
             "name": "Walter White",
@@ -31,12 +31,14 @@
             "groups": [
                 "Employees"
             ]
+        },
         {
             "name": "Gus Fring",
             "password":"chickenman2024",
             "groups": [
                 "Employees"
             ]
+        },
         }
         {
             "name": "Hank Schrader",
@@ -44,6 +46,7 @@
             "groups": [
                 "Employees"
             ]
+        },
         }
         {
             "name": "Saul Goodman",
@@ -51,21 +54,21 @@
             "groups": [
                 "Employees"
             ]
-        }
+        },
         {
             "name": "adm.Walter White",
             "password":"iamtheonewhoknocks",
             "groups": [
                 "IT Admin"
             ]
-        }
+        },
         {
             "name": "adm.Jesse Pinkman",
             "password":"yehscienceB",
             "groups": [
                 "IT Admin"
             ]
-        }
+        },
         {
             "name": "adm.Gus Fring",
             "password":"lookatmehector",
@@ -74,6 +77,6 @@
             ]
         }
 
-        }
+    
     ]
 }
