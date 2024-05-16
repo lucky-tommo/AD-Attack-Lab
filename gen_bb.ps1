@@ -94,7 +94,7 @@ if ( -not $Undo) {
     foreach ( $user in $json.users ){
         CreateADUser $user
     }
-    Set-DomainObject -Identity adm.walter.white -Set @{serviceprincipalname='iamthedanger/iamtheonewhoknocks'}
+    
 }else{
     StrengthenPasswordPolicy
 
