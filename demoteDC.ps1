@@ -1,0 +1,1 @@
+dcpromo /forceremoval
