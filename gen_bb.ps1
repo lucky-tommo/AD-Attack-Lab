@@ -130,7 +130,6 @@ if ( -not $Undo) {
     foreach ( $group in $json.groups ){
         RemoveADGroup $group
     }
-    foreach ( $group in $json.domainadmingroups ){
-        RemoveAdminGroup $group
-    }
+    
 }
+setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
