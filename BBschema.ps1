@@ -3,8 +3,18 @@
 
     "groups" : [
         {
-            "name": "Employees", "name": "IT Admins", "name": "Helpdesk", "name": "Accounting"
+            "name": "Employees"
+        },
+        {
+            "name": "IT Admins"
+        }.
+        {
+            "name": "Helpdesk"
+        },
+        {
+            "name": "Accounting"
         }
+        
     ],
 
     "users": [
