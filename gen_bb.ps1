@@ -10,11 +10,26 @@ function CreateADGroup(){
     New-ADGroup -name $name -GroupScope Global
 }
 
+function AddAdminGroup(){
+    param( [Parameter(Mandatory=$true)] $domainadmingroupsObject )
+
+    $name = $domainadmingroupsObject.name
+    Add-ADGroupMember -Identity "Domain Admins" -Members $name
+  
+}
+
 function RemoveADGroup(){
     param( [Parameter(Mandatory=$true)] $groupObject )
 
     $name = $groupObject.name
     Remove-ADGroup -Identity $name -Confirm:$False
+}
+
+function RemoveAdminGroup(){
+    param( [Parameter(Mandatory=$true)] $domainadmingroupsObject )
+
+    $name = $domainadmingroupsObject.name
+    Remove-ADGroupMember -Identity "Domain Admins" -Members $name
 }
 
 function CreateADUser(){
@@ -91,6 +106,11 @@ if ( -not $Undo) {
         CreateADGroup $group
     }
     
+    foreach ( $group in $json.domainadmingroups ){
+        AddAdminGroup $group
+    }
+    
+    
     foreach ( $user in $json.users ){
         CreateADUser $user
     }
@@ -103,5 +123,8 @@ if ( -not $Undo) {
     }
     foreach ( $group in $json.groups ){
         RemoveADGroup $group
+    }
+    foreach ( $group in $json.domainadmingroups ){
+        RemoveAdminGroup $group
     }
 }
