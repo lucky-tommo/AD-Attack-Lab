@@ -1,5 +1,5 @@
 {
-    "domain": "luckyspider.org",
+    "domain": "breakingbad.abq",
 
     "groups" : [
         {
@@ -13,8 +13,31 @@
         },
         {
             "name": "Accounting"
+        },
+        {
+            "name": "DEA"
+        },
+        {
+            "name": "Cartel"
+        },
+        {
+            "name": "ChickenCrew"
+        },
+        {
+            "name": "Madrigal Engineering"
+        },
+        {
+            "name": "Vamonos Pest Control"
+        },
+        {
+            "name": "OG Crew"
+        },
+        {
+            "name": "HR"
+        },
+        {
+            "name": "Super Secret Super Lab"
         }
-        
     ],
 
     "users": [
