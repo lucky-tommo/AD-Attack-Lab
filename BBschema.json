@@ -203,15 +203,15 @@
             "password":"imthefallguy",
             "groups": [
                 "Employees",
-                "Madrigal Engineer"
+                "Madrigal Engineering"
             ]
         },
         {           
             "name": "Todd Alquist",
-            "password":"",
+            "password":"thissmellslikecatpee",
             "groups": [
                 "Employees",
-                "Vamonos Pest"
+                "Vamonos Pest Control"
             ]
         },
         {           
@@ -225,7 +225,7 @@
         },
         {           
             "name": "Andrea Cantillo",
-            "password":"iamthedanger",
+            "password":"deservedbetter",
             "groups": [
                 "Employees",
                 "OG Crew",
@@ -242,7 +242,7 @@
         },
         {           
             "name": "Skinny Pete",
-            "password":"iamthedanger",
+            "password":"icantbeallaboutspelling",
             "groups": [
                 "Employees",
                 "OG Crew"
