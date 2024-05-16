@@ -107,7 +107,8 @@ $Global:Domain = $json.domain
 
 if ( -not $Undo) {
     WeakenPasswordPolicy
-
+    setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
+    
     foreach ( $group in $json.groups ){
         CreateADGroup $group
     }
