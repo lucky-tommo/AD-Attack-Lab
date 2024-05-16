@@ -60,7 +60,8 @@
             "name": "Saul Goodman",
             "password":"s'allgoodman",
             "groups": [
-                "Employees"
+                "Employees",
+                "Helpdesk"
             ]
         },
         {
