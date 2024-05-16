@@ -1,3 +1,1 @@
-# WIP - below doesn't work
-
-Set-DomainObject -Identity adm.walter.white -Set @{serviceprincipalname='iamthedanger/iamtheonewhoknocks'}
+setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
