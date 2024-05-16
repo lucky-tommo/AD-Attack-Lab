@@ -78,5 +78,11 @@
         }
 
     
+    ],
+    "domainadmingroups" : [
+        {
+            "name": "IT Admins"
+        }
     ]
+
 }
