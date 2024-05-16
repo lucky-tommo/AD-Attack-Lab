@@ -45,7 +45,7 @@
         {
             "local_admin": ["ws01"],
             "name": "Skyler White",
-            "password":"ilovewalt2024",
+            "password":"igaveittoted",
             "groups": [
                 "Employees",
                 "Accounting"
@@ -68,7 +68,7 @@
         },
         {
             "name": "Gus Fring",
-            "password":"chickenman2024",
+            "password":"lospolloshermanos",
             "groups": [
                 "Employees",
                 "ChickenCrew"
@@ -76,7 +76,7 @@
         },
         {
             "name": "Hank Schrader",
-            "password":"youretoostupidtosee",
+            "password":"jesusmarie",
             "groups": [
                 "Employees",
                 "DEA"
@@ -84,7 +84,7 @@
         },
         {
             "name": "Saul Goodman",
-            "password":"s'allgoodman",
+            "password":"lwyrup",
             "groups": [
                 "Employees",
                 "Helpdesk"
@@ -116,7 +116,7 @@
         },
         {           
             "name": "Marie Schrader",
-            "password":"P@$$W0rd",
+            "password":"schraderbrau",
             "groups": [
                 "Employees",
                 "DEA",
@@ -125,7 +125,7 @@
         },
         {           
             "name": "Walter WhiteJR",
-            "password":"P@$$w0rd",
+            "password":"thissmellslikebandaids",
             "groups": [
                 "Employees",
                 "HR"
@@ -133,7 +133,7 @@
         },
         {           
             "name": "Mike Ehrmantraut",
-            "password":"JackofAllTrades2024",
+            "password":"pimentoisthecaviarofthesouth",
             "groups": [
                 "Employees",
                 "Cartel",
@@ -143,7 +143,7 @@
         },
         {           
             "name": "Tuco Salamanca",
-            "password":"P@$$w0rd",
+            "password":"heisenbergsaysrelax",
             "groups": [
                 "Employees",
                 "Cartel"
@@ -151,7 +151,7 @@
         },
         {           
             "name": "Hector Salamanca",
-            "password":"P@$$w0rd",
+            "password":"dingdingdingding",
             "groups": [
                 "Employees",
                 "Cartel"
@@ -159,7 +159,7 @@
         },
         {           
             "name": "Gale Boetticher",
-            "password":"P@$$w0rd",
+            "password":"I'mHeisenberg?",
             "groups": [
                 "Employees",
                 "ChickenCrew",
@@ -168,7 +168,7 @@
         },
         {           
             "name": "Leonel Salamanca",
-            "password":"P@$$w0rd",
+            "password":"finishhim",
             "groups": [
                 "Employees",
                 "Cartel"
@@ -176,7 +176,7 @@
         },
         {           
             "name": "Marco Salamanca",
-            "password":"iamthedanger",
+            "password":"no.tooeasy",
             "groups": [
                 "Employees",
                 "Cartel"
@@ -184,7 +184,7 @@
         },
         {           
             "name": "Nacho Varga",
-            "password":"iamthedanger",
+            "password":"idrathergetsomeshuteye",
             "groups": [
                 "Employees",
                 "Cartel"
@@ -192,7 +192,7 @@
         },
         {           
             "name": "Lydia Rodarte-Quayle",
-            "password":"iamthedanger",
+            "password":"hewasthedanger",
             "groups": [
                 "Employees",
                 "Madrigal Engineering"
@@ -200,7 +200,7 @@
         },
         {           
             "name": "Ron Forenail",
-            "password":"iamthedanger",
+            "password":"imthefallguy",
             "groups": [
                 "Employees",
                 "Madrigal Engineer"
@@ -208,7 +208,7 @@
         },
         {           
             "name": "Todd Alquist",
-            "password":"iamthedanger",
+            "password":"",
             "groups": [
                 "Employees",
                 "Vamonos Pest"
@@ -216,7 +216,7 @@
         },
         {           
             "name": "Krazy Eight",
-            "password":"iamthedanger",
+            "password":"PropertyofASACSchrader",
             "groups": [
                 "Employees",
                 "Cartel",
