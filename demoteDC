@@ -1,0 +1,8 @@
+open server manager
+manage
+remove services
+remove ad cert service and click through - will error - choose to demote. 
+select force
+go go go - reboot. 
+
+
