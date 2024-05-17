@@ -80,7 +80,10 @@ function RemoveADUser(){
     $samAccountName = $username
     Remove-ADUser -Identity $samAccountName -Confirm:$False
 }
-
+function BadConfig(){
+    Set-SmbClientConfiguration -RequireSecuritySignature 0 -EnableSecuritySignature 0 -Confirm -Force
+    setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
+    
 function WeakenPasswordPolicy(){
     secedit /export /cfg C:\Windows\Tasks\secpol.cfg
     (Get-Content C:\Windows\Tasks\secpol.cfg).replace("PasswordComplexity = 1", "PasswordComplexity = 0").replace("MinimumPasswordLength = 7", "MinimumPasswordLength = 1") | Out-File C:\Windows\Tasks\secpol.cfg
@@ -115,7 +118,7 @@ if ( -not $Undo) {
     foreach ( $user in $json.users ){
         CreateADUser $user
     }
-    setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
+    
 }
 else{
     StrengthenPasswordPolicy
