@@ -107,29 +107,29 @@ function AD-AddACL {
 }
 function BadACLs {
 #ACL for Cartel to control DEA
-        Write-Good "Adding misconfigured ACL rule for the $Global:Cartel group."	
-        $DestinationGroup = Get-ADGroup -Identity $Global:Cartel
-        $SourceGroup = Get-ADGroup -Identity $Global:DEA
+        
+        $DestinationGroup = Get-ADGroup -Identity Cartel
+        $SourceGroup = Get-ADGroup -Identity DEA
         AD-AddACL -Source $DestinationGroup.sid -Destination $SourceGroup.DistinguishedName -Rights "GenericAll"
-        Write-Info "Whoops! GenericAll rights granted to $Global:Cartel."
+        
 #ACL for Todd to control Jesse  (remember the hole?)       
-        Write-Good "Adding misconfigured ACL rule for Todd Alquist to Jesse Pinkman."
+        
         $vulnAclUser = Get-ADUser -Identity "todd.alquist"
         $SourceUser = Get-ADUser -Identity "jesse.pinkman"
         AD-AddACL -Source $vulnAclUser.sid -Destination $SourceUser.DistinguishedName -Rights "GenericAll"
-        Write-Info "Whoops! GenericAll rights granted to Todd Alquist to Jesse Pinkman."
+        
 #ACL for Todd to control Jesse (Admin)
-        Write-Good "Adding misconfigured ACL rule for Todd Alquist to Jesse Pinkman (admin)."
+        
         $vulnAclUser = Get-ADUser -Identity "todd.alquist"
         $SourceUser = Get-ADUser -Identity "adm.jesse.pinkman"
         AD-AddACL -Source $vulnAclUser.sid -Destination $SourceUser.DistinguishedName -Rights "GenericAll"
-        Write-Info "Whoops! GenericAll rights granted to Todd Alquist to Jesse Pinkman(admin)."
+        
 #ACL for Helpdesk to control IT Admin        
-        Write-Good "Adding misconfigured ACL rule for the $Global:Helpdesk."	
-        $DestinationGroup = Get-ADGroup -Identity $Global:Helpdesk
-        $SourceGroup = Get-ADGroup -Identity $Global:IT Admin
+        
+        $DestinationGroup = Get-ADGroup -Identity Helpdesk
+        $SourceGroup = Get-ADGroup -Identity IT Admin
         AD-AddACL -Source $DestinationGroup.sid -Destination $SourceGroup.DistinguishedName -Rights "GenericAll"
-        Write-Info "Whoops! GenericAll rights granted to $Global:Helpdesk."
+        
 
 }	
 function BadConfig(){
