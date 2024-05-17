@@ -139,7 +139,7 @@ function BadConfig(){
     setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
 #ASREP Roasting
     Set-ADAccountControl -Identity saul.goodman -DoesNotRequirePreAuth 1
-    
+}    
 function WeakenPasswordPolicy(){
     secedit /export /cfg C:\Windows\Tasks\secpol.cfg
     (Get-Content C:\Windows\Tasks\secpol.cfg).replace("PasswordComplexity = 1", "PasswordComplexity = 0").replace("MinimumPasswordLength = 7", "MinimumPasswordLength = 1") | Out-File C:\Windows\Tasks\secpol.cfg
