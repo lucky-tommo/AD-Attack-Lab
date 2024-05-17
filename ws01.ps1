@@ -3,6 +3,7 @@
 #do this before user creation to set local admins on machines
 
 Rename-Computer "ws-01"
+winrm qc -q -force
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 172.27.0.200, 172.27.0.2
 #need to restart here?
 Add-Computer -DomainName breakingbad.abq -Restart
