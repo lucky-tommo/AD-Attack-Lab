@@ -80,9 +80,64 @@ function RemoveADUser(){
     $samAccountName = $username
     Remove-ADUser -Identity $samAccountName -Confirm:$False
 }
+function AD-AddACL {
+        [CmdletBinding()]
+        param(
+            [Parameter(Mandatory=$true)]
+            [ValidateNotNullOrEmpty()]
+            [string]$Destination,
+
+            [Parameter(Mandatory=$true)]
+            [ValidateNotNullOrEmpty()]
+            [System.Security.Principal.IdentityReference]$Source,
+
+            [Parameter(Mandatory=$true)]
+            [ValidateNotNullOrEmpty()]
+            [string]$Rights
+
+        )
+        $ADObject = [ADSI]("LDAP://" + $Destination)
+        $identity = $Source
+        $adRights = [System.DirectoryServices.ActiveDirectoryRights]$Rights
+        $type = [System.Security.AccessControl.AccessControlType] "Allow"
+        $inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance] "All"
+        $ACE = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $identity,$adRights,$type,$inheritanceType
+        $ADObject.psbase.ObjectSecurity.AddAccessRule($ACE)
+        $ADObject.psbase.commitchanges()
+}
+function badAcls {
+#ACL for Cartel to control DEA
+        Write-Good "Adding misconfigured ACL rule for the $Global:Cartel group."	
+        $DestinationGroup = Get-ADGroup -Identity $Global:Cartel
+        $SourceGroup = Get-ADGroup -Identity $Global:DEA
+        AD-AddACL -Source $DestinationGroup.sid -Destination $SourceGroup.DistinguishedName -Rights "GenericAll"
+        Write-Info "Whoops! GenericAll rights granted to $Global:Cartel."
+#ACL for Todd to control Jesse  (remember the hole?)       
+        Write-Good "Adding misconfigured ACL rule for Todd Alquist to Jesse Pinkman."
+        $vulnAclUser = Get-ADUser -Identity "todd.alquist"
+        $SourceUser = Get-ADUser -Identity "jesse.pinkman"
+        AD-AddACL -Source $vulnAclUser.sid -Destination $SourceUser.DistinguishedName -Rights "GenericAll"
+        Write-Info "Whoops! GenericAll rights granted to Todd Alquist to Jesse Pinkman."
+#ACL for Todd to control Jesse (Admin)
+        Write-Good "Adding misconfigured ACL rule for Todd Alquist to Jesse Pinkman (admin)."
+        $vulnAclUser = Get-ADUser -Identity "todd.alquist"
+        $SourceUser = Get-ADUser -Identity "adm.jesse.pinkman"
+        AD-AddACL -Source $vulnAclUser.sid -Destination $SourceUser.DistinguishedName -Rights "GenericAll"
+        Write-Info "Whoops! GenericAll rights granted to Todd Alquist to Jesse Pinkman(admin)."
+#ACL for Helpdesk to control IT Admin        
+        Write-Good "Adding misconfigured ACL rule for the $Global:Helpdesk."	
+        $DestinationGroup = Get-ADGroup -Identity $Global:Helpdesk
+        $SourceGroup = Get-ADGroup -Identity $Global:IT Admin
+        AD-AddACL -Source $DestinationGroup.sid -Destination $SourceGroup.DistinguishedName -Rights "GenericAll"
+        Write-Info "Whoops! GenericAll rights granted to $Global:Helpdesk."
+
+}	
 function BadConfig(){
+#Disable SMB Signing
     Set-SmbClientConfiguration -RequireSecuritySignature 0 -EnableSecuritySignature 0 -Confirm -Force
+#Kerberoasting
     setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
+#ASREP Roasting
     Set-ADAccountControl -Identity saul.goodman -DoesNotRequirePreAuth 1
     
 function WeakenPasswordPolicy(){
