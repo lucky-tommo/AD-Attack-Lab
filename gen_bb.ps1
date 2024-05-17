@@ -105,7 +105,7 @@ function AD-AddACL {
         $ADObject.psbase.ObjectSecurity.AddAccessRule($ACE)
         $ADObject.psbase.commitchanges()
 }
-function badAcls {
+function BadACLs {
 #ACL for Cartel to control DEA
         Write-Good "Adding misconfigured ACL rule for the $Global:Cartel group."	
         $DestinationGroup = Get-ADGroup -Identity $Global:Cartel
@@ -174,7 +174,8 @@ if ( -not $Undo) {
     foreach ( $user in $json.users ){
         CreateADUser $user
     }
-    
+    BadConfig
+    BadACLs
 }
 else{
     StrengthenPasswordPolicy
