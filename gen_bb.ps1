@@ -83,6 +83,7 @@ function RemoveADUser(){
 function BadConfig(){
     Set-SmbClientConfiguration -RequireSecuritySignature 0 -EnableSecuritySignature 0 -Confirm -Force
     setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
+    Set-ADAccountControl -Identity saul.goodman -DoesNotRequirePreAuth 1
     
 function WeakenPasswordPolicy(){
     secedit /export /cfg C:\Windows\Tasks\secpol.cfg
