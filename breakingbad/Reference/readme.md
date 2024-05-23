@@ -7,6 +7,7 @@ Workstations
 ws-01 - skyler.white as local admin, adm.walter.white has cached creds
 
 ws-02
+
 ws-03 
 
 Servers
