@@ -1,4 +1,4 @@
-Reference Info for the Breaking Bad Scenario /n
+Reference Info for the Breaking Bad Scenario \n
 
 Machines
 ---------
