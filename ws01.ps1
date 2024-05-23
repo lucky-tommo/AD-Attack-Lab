@@ -5,5 +5,9 @@
 Rename-Computer "ws-01"
 winrm qc -q -force
 Set-DNSClientServerAddress -InterfaceIndex (Get-NetAdapter).InterfaceIndex -ServerAddresses 172.27.0.200, 172.27.0.2
-#need to restart here?
-Add-Computer -DomainName breakingbad.abq -Restart
+cmd /c REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "GenerateLLMNR" /t REG_SZ /F /D "C:\AD-Attack-Lab\GenerateLLMNR.exe"
+REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend /v "FinishSetup" /d "powershell.exe -noprofile -command Add-Computer -DomainName breakingbad.abq -Restart"
+#Add-Computer -DomainName breakingbad.abq -Restart
+
+
+
