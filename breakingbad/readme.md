@@ -53,6 +53,32 @@ adm.walter.white has logged into ws01
 
 ASREP Roastable users - no krb preauth reqd
 ----------------------
+saul.goodman does not require preauth
+
+SMS Signing disabled
+--------------------
+DC1 and DC2 do not required SMB Signing
+All workstations do not require SMB Signing
+
+Kerberoastable Users
+---------------------
+adm.walter.white is has an SPN and is kerberoastable
+
+Sketchy ACLs
+-------------
+Cartel can control DEA - GenericAll
+todd.alquist can control jesse.pinkman and adm.jesse.pinkman - GenericAll
+Helpdesk can control IT Admin - GenericAll 
+
+Domain Admins
+--------------
+Group: IT Admin
+adm.walter.white
+adm.jesse.pinkman
+adm.gus.fring
+
+
+
 
 
 
