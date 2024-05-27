@@ -135,6 +135,7 @@ function BadACLs {
 function BadConfig(){
 #Disable SMB Signing
     Set-SmbClientConfiguration -RequireSecuritySignature 0 -EnableSecuritySignature 0 -Confirm -Force
+    Set-SmbServerConfiguration -RequireSecuritySignature 0 -EnableSecuritySignature 0 -Confirm -Force
 #Kerberoasting
     setspn -s iamtheonewhoknocks/iamthedanger adm.walter.white
 #ASREP Roasting
