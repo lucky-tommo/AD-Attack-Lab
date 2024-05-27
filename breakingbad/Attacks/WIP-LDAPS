@@ -1,0 +1,7 @@
+#disable channel binding
+cmd /c Reg Add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters /v "LdapEnforceChannelBinding" /t REG_DWORD /d 0
+
+#disable ldap signing
+
+cmd /c Reg Add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters /v "ldapserverintegrity" /t REG_DWORD /d 0
+
